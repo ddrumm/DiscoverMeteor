@@ -14,5 +14,6 @@ Template.postSubmit.events({
 
       Router.go('postPage', {_id: id});
     });
+    Router.go('postsList');
   }
 });
