@@ -15,10 +15,10 @@ Meteor.methods({
       author: user.username,
       submitted: new Date().getTime()
     });
-    return Comments.insert(comment);
-    Posts.update(comment.postId, {$inc: {commentsCount: 1}});
 
-    return Comments.insert(comment);
+    comment._id = Comments.insert(comment);
+    createCommentNoficiation(comment);
+    return comment._id;
   }
 });
 
