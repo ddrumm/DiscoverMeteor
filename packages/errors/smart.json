@@ -1,0 +1,10 @@
+{
+  "name": "errors",
+  "description": "A pattern to display application errors to the user",
+  "homepage": "https://github.com/ddrumm/meteor-errors",
+  "author": "Donald Drummond <donald.e.drummond@gmail.com",
+  "version": "0.1.0",
+  "git": "https://github.com/ddrumm/meteor-errors.git",
+  "packages": {
+  }
+}
