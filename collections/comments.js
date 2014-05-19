@@ -16,6 +16,8 @@ Meteor.methods({
       submitted: new Date().getTime()
     });
 
+    Posts.update(comment.postId, {$inc: {commentsCount: 1}});
+
     comment._id = Comments.insert(comment);
     createCommentNoficiation(comment);
     return comment._id;
