@@ -44,7 +44,7 @@ Meteor.methods({
     var post = Posts.findOne(postId);
     if (!post)
       throw new Meteor.Error(422, 'Post not found');
-    if (_iinclude(post.upvoters, user._id))
+    if (_.include(post.upvoters, user._id))
       throw new Meteor.Error(422, 'Already upvoted this post');
     Posts.update(post._id, {
       $addToSet: {upvoters: user._id},
