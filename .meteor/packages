@@ -10,3 +10,4 @@ accounts-ui-bootstrap-dropdown
 accounts-password
 errors
 iron-router
+iron-router-progress
