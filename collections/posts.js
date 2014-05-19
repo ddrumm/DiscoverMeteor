@@ -25,20 +25,11 @@ Meteor.methods({
       }
 
       var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
-        title: postAttributes.title + (this.isSimulation ? '(client' : '(server)'),
+        title: postAttributes.title,
         userId: user._id,
         author: user.username,
         submitted: new Date().getTime()
       });
-
-      if (! this.isSimulation) {
-        var Future = Npm.require('fibers/future');
-        var future = new Future();
-        Meteor.setTimeout(function() {
-          future.return();
-        }, 5 * 1000);
-        future.wait();
-      }
 
       var postId = Posts.insert(post);
 
